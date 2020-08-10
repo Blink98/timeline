@@ -1,27 +1,95 @@
-// const addSecBtn = document.getElementById("btn");
-// const tube = document.getElementById("tube");
-// const tubeLine = document.getElementById("line");
+// Heading is set only once so no need to put it in function and change again and again with the same data.
 
-// addSecBtn.addEventListener("click", addSection);
+const timelineHeading = document.getElementById("timelineHeading");
+timelineHeading.innerText = "Heading"; // Add Fetch Data here.
 
-// function addSection() {
-//     var newSec = document.createElement("div");
-//     var newLeftSection = document.createElement("div");
-//     var newRightSection = document.createElement("div");
+function addSection(num) {
+    // Info Section Container
+    var infoSec = document.createElement("div");
+    infoSec.classList.add("info-sec");
+    // ###### For Adding Image ###### 
+    // Image Container
+    var imgContainer = document.createElement("div");
+    imgContainer.classList.add("img-container");
+    // ###### Move Image container to right ######
+    // count = count + 1;
+    // console.log(count);
+
+    if (i % 2 == 0){
+        console.log(i);
+        imgContainer.classList.add("move-to-right");
+    }
+    // ###### Move Image container to right ######
+
+
+    // Image
+    var imageTag = document.createElement("img");
+    imageTag.src = "./images/01kasol.jpg"; // Add Fetch Data here.
+    imageTag.alt = "01kasol"; // Add Fetch Data here.
+
+    // ###### For Adding Image ###### 
     
-//     newSec.classList.add("item-container");
-//     newLeftSection.classList.add("left-item");
-//     newRightSection.classList.add("right-item");
-//     newSec.appendChild(newLeftSection);
-//     newSec.appendChild(newRightSection);
+    // ###### For Adding Text Info ######
+    // Info Container
+    var infoContainer = document.createElement("div");
+    infoContainer.classList.add("info-container");
+    // Campaign Heading
+    var campaignHeading = document.createElement("h2");
+    campaignHeading.classList.add("campaign-heading");
+    campaignHeading.innerText = "Campaign Name"; // Add Fetch Data here.
+    // Campaign Description
+    var campaignDescription = document.createElement("p");
+    campaignDescription.classList.add("campaign-description");
+    campaignDescription.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ab harum nam laborum blanditiis, ex quia velit exercitationem, beatae impedit illo. Porro, quidem animi sequi molestias repellat dolores magni error?"; // Add Fetch Data here.
+    
+    // Inner Info Container
+    var innnerInfoContainer = document.createElement("div");
+    innnerInfoContainer.classList.add("inner-info-container");
+    // Start Date
+    var startDate = document.createElement("p");
+    startDate.classList.add("inner-info");
+    startDate.innerText = "Started on - ";
+    // Important text
+    var startDateStrongText = document.createElement("strong");
+    startDateStrongText.innerText = "01/02/2020"; // Add Fetch Data here.
+    // Estimated Pay
+    var estimatedPay = document.createElement("p");
+    estimatedPay.classList.add("inner-info");
+    estimatedPay.innerText = "Estimated pay - ";
+    // Important text
+    var estimatedPayStrongText = document.createElement("strong");
+    estimatedPayStrongText.innerText = "Rs 200"; // Add Fetch Data here.
 
-//     var currentTubeHeight = tube.clientHeight;
-//     var newHeight = currentTubeHeight + 480;
-//     tube.style.height = `${newHeight}px`;
+    // ###### For Adding Text Info ######
 
-//     var currentTubeLineHeight = tubeLine.clientHeight;
-//     var newLineHeight = currentTubeLineHeight + 480;
-//     tubeLine.style.height = `${newLineHeight}px`;
+    
+    // ###### Nesting the tags ######
+    // Adding strong element inside p(estimatedPay) tag.
+    estimatedPay.appendChild(estimatedPayStrongText);
+    // Adding strong element inside p(startDate) tag.
+    startDate.appendChild(startDateStrongText);
+    // Adding estimatedPay and startDate inside Inner Info Container.
+    innnerInfoContainer.appendChild(startDate);
+    innnerInfoContainer.appendChild(estimatedPay);
+    // Adding Campaign Heading, Campaign Description and Inner Info Container inside Info Container.
+    infoContainer.appendChild(campaignHeading);
+    infoContainer.appendChild(campaignDescription);
+    infoContainer.appendChild(innnerInfoContainer);
+    
+    // Adding image inside Image Container.
+    imgContainer.appendChild(imageTag);
 
-//     document.getElementById("items").appendChild(newSec);
-// }   
+    // Adding Image Container and Info Container inside Info Section Container.
+    infoSec.appendChild(imgContainer);
+    infoSec.appendChild(infoContainer);
+
+    // Adding Info Section in the Info Section Container.
+    document.getElementById("infoSecContainer").appendChild(infoSec);
+    // ###### Nesting the tags ######
+}   
+
+
+// Calling function in a loop
+for (i=1; i<=4; i++) {
+    addSection(i);
+}

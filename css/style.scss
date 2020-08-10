@@ -25,6 +25,11 @@ body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 
+    ::selection {
+        color: #ffffff;
+        background: $primary-color;
+    }
+
     .main {
         margin: 4rem 1rem;
         display: grid;
@@ -225,6 +230,7 @@ body {
                             .inner-info-container {
                                 display: flex;
                                 justify-content: space-between;
+                                flex-wrap: wrap;
     
                                 .inner-info {
                                     // font-size: 1.125rem;
@@ -272,7 +278,7 @@ body {
             // grid-column-gap: 0px;
             // grid-row-gap: 0px;
             margin: 5rem auto;
-            max-width: 1024px;
+            max-width: 1174px;
     
             .header { 
                 grid-area: 1 / 1 / 2 / 2;

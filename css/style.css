@@ -13,6 +13,16 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+body ::-moz-selection {
+  color: #ffffff;
+  background: #74CC01;
+}
+
+body ::selection {
+  color: #ffffff;
+  background: #74CC01;
+}
+
 body .main {
   margin: 4rem 1rem;
   display: -ms-grid;
@@ -212,6 +222,8 @@ body .main .footer {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   body .main .main-content-container .tube {
     -ms-grid-row: 1;
@@ -227,7 +239,7 @@ body .main .footer {
     -ms-grid-rows: 16rem 1fr 3rem;
         grid-template-rows: 16rem 1fr 3rem;
     margin: 5rem auto;
-    max-width: 1024px;
+    max-width: 1174px;
   }
   body .main .header {
     -ms-grid-row: 1;
