@@ -1,9 +1,29 @@
 // Heading is set only once so no need to put it in function and change again and again with the same data.
-
 const timelineHeading = document.getElementById("timelineHeading");
 timelineHeading.innerText = "Heading"; // Add Fetch Data here.
 
-function addSection(num) {
+var pageBody = document.body;
+var noTimelineSection = document.getElementById("noTimelineSection");
+var mainSection = document.getElementById("mainSection");
+   
+
+function noJobs() {
+    // Adding the "when-no-timeline" class to body of the page.
+    pageBody.classList.add("when-no-timeline");
+    // Showing the No Timeline Section.
+    noTimelineSection.style.display = "grid";
+    // Hiding the Main Section.
+    mainSection.style.display = "none";
+}
+
+function addSection(num) {    
+    // Removing the "when-no-timeline" class from body of the page.
+    pageBody.classList.remove("when-no-timeline");
+    // Hiding the No Timeline Section.
+    noTimelineSection.style.display = "none";
+    // Showing the Main Section.
+    mainSection.style.display = "grid";
+
     // Info Section Container
     var infoSec = document.createElement("div");
     infoSec.classList.add("info-sec");
@@ -24,7 +44,7 @@ function addSection(num) {
 
     // Image
     var imageTag = document.createElement("img");
-    imageTag.src = "./images/01kasol.jpg"; // Add Fetch Data here.
+    imageTag.src = "/images/01kasol.jpg"; // Add Fetch Data here.
     imageTag.alt = "01kasol"; // Add Fetch Data here.
 
     // ###### For Adding Image ###### 
@@ -86,10 +106,18 @@ function addSection(num) {
     // Adding Info Section in the Info Section Container.
     document.getElementById("infoSecContainer").appendChild(infoSec);
     // ###### Nesting the tags ######
-}   
-
-
-// Calling function in a loop
-for (i=1; i<=4; i++) {
-    addSection(i);
 }
+
+// Number of jobs applied
+var numOfJobsApplied = 4;
+
+if (numOfJobsApplied == 0) {
+    noJobs();
+} else {
+    // Adding Sections using a loop
+    for (i=1; i<=numOfJobsApplied; i++) {
+        addSection(i);
+    }
+}
+
+

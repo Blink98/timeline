@@ -23,6 +23,49 @@ body ::selection {
   background: #74CC01;
 }
 
+body .no-timeline-section {
+  background: #74CC01;
+  width: 90%;
+  height: 70vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+}
+
+body .no-timeline-section .logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+}
+
+body .no-timeline-section .logo-container img {
+  width: 100%;
+}
+
+body .no-timeline-section .no-timeline-text-container {
+  background: #ffffff;
+  color: #74CC01;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  padding: 2rem;
+}
+
 body .main {
   margin: 4rem 1rem;
   display: -ms-grid;
@@ -158,7 +201,33 @@ body .main .footer {
   background: #74CC01;
 }
 
+.when-no-timeline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
 @media screen and (min-width: 460px) {
+  body .no-timeline-section {
+    height: 70vh;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+  body .no-timeline-section .logo-container {
+    padding: 3rem;
+  }
+  body .no-timeline-section .no-timeline-text-container {
+    font-size: 3rem;
+    padding: 4rem;
+  }
   body .main {
     margin: 4rem auto;
     width: 90%;
@@ -235,6 +304,19 @@ body .main .footer {
 }
 
 @media screen and (min-width: 787px) {
+  body .no-timeline-section {
+    max-width: 1024px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+  body .no-timeline-section .logo-container {
+    padding: 4rem;
+  }
+  body .no-timeline-section .no-timeline-text-container {
+    text-align: left;
+  }
   body .main {
     -ms-grid-rows: 16rem 1fr 3rem;
         grid-template-rows: 16rem 1fr 3rem;
