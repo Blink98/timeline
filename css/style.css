@@ -11,6 +11,7 @@ body {
   background: #355c82;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  padding: 50rem 0;
 }
 
 body ::-moz-selection {
@@ -190,6 +191,70 @@ body .main .main-content-container .tube {
   grid-area: 1 / 1 / 4 / 2;
   background: #3d3d3d;
   border-radius: 100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 5rem 1fr 5rem;
+      grid-template-rows: 5rem 1fr 5rem;
+}
+
+body .main .main-content-container .tube .start {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+body .main .main-content-container .tube .end {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+body .main .main-content-container .tube .tube-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  font-size: 0.6rem;
+}
+
+body .main .main-content-container .tube .line {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 1 / 3 / 2;
+  width: 0;
+  height: 100%;
+  margin: auto;
+  border-right: 1px dashed #ffffff;
+}
+
+body .main .main-content-container .tube .car-container {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+body .main .main-content-container .tube .car-container .car {
+  content: url(/images/car.png);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50vh;
+  width: 100%;
 }
 
 body .main .footer {
@@ -301,6 +366,9 @@ body .main .footer {
     -ms-grid-column-span: 1;
     grid-area: 1 / 1 / 4 / 2;
   }
+  body .main .main-content-container .tube .tube-text {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (min-width: 787px) {
@@ -384,6 +452,9 @@ body .main .footer {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-area: 1 / 2 / 4 / 3;
+  }
+  body .main .main-content-container .tube .tube-text {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

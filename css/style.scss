@@ -24,6 +24,7 @@ body {
     background: $bg-color;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    padding: 50rem 0; // Delete this after testing.
 
     ::selection {
         color: #ffffff;
@@ -146,6 +147,44 @@ body {
                 grid-area: 1 / 1 / 4 / 2;
                 background: #3d3d3d;
                 border-radius: 100px;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 5rem 1fr 5rem;
+
+                .start {
+                    grid-area: 1 / 1 / 2 / 2;
+                }
+
+                .end {
+                    grid-area: 3 / 1 / 4 / 2;
+                }
+
+                .tube-text {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #ffffff;
+                    font-size: 0.6rem;
+                }
+
+                .line {
+                    grid-area: 2 / 1 / 3 / 2;
+                    width: 0;
+                    height: 100%;
+                    margin: auto;
+                    border-right: 1px dashed #ffffff;
+                }
+
+                .car-container {
+                    grid-area: 2 / 1 / 3 / 2;
+
+                    .car {
+                        content: url(/images/car.png);
+                        position: sticky;
+                        top: 50vh;
+                        width: 100%;
+                    }
+                }
             }
         }
 
@@ -239,6 +278,10 @@ body {
                 
                 .tube { 
                     grid-area: 1 / 1 / 4 / 2;
+
+                    .tube-text {
+                        font-size: 0.8rem;
+                    }
                 }
             }
         }            
@@ -307,6 +350,10 @@ body {
 
                 .tube { 
                     grid-area: 1 / 2 / 4 / 3;
+
+                    .tube-text {
+                        font-size: 1rem;
+                    }
                 }
             }
         }            
